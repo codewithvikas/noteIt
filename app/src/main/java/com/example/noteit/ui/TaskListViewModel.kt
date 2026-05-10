@@ -4,25 +4,25 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.noteit.data.Task
-import com.example.noteit.data.TaskListRepository
+import com.example.noteit.data.DefaultTaskRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 
-class TaskListViewModel(val taskListRepository: TaskListRepository) : ViewModel() {
+class TaskListViewModel(val defaultTaskRepository: DefaultTaskRepository) : ViewModel() {
     fun addTask(task: Task) {
-        taskListRepository.addTask(task)
+        defaultTaskRepository.addTask(task)
     }
 
-    val tasks = taskListRepository.tasks.stateIn(
+    val tasks = defaultTaskRepository.tasks.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(500),
         initialValue = emptyList()
     )
 }
 
-class TaskListViewModelFactory(val taskListRepository: TaskListRepository) :
+class TaskListViewModelFactory(val defaultTaskRepository: DefaultTaskRepository) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return TaskListViewModel(taskListRepository) as T
+        return TaskListViewModel(defaultTaskRepository) as T
     }
 }
