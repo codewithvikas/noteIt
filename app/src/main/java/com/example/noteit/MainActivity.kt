@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.example.noteit.data.DefaultTaskRepository
-import com.example.noteit.tasks.TasksScreen
 import com.example.noteit.tasks.TasksViewModel
 import com.example.noteit.tasks.TasksViewModelFactory
 import com.example.noteit.ui.theme.NoteItTheme
@@ -37,7 +36,7 @@ class MainActivity : ComponentActivity() {
             ).get("ViewModelKey", TasksViewModel::class.java)
 
             NoteItTheme {
-                TasksScreen(viewModel)
+                TodoNavGraph(viewModel = viewModel)
             }
         }
     }
