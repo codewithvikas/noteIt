@@ -3,6 +3,7 @@ package com.example.noteit.tasks
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModelProvider
@@ -28,5 +29,5 @@ fun TasksScreen( viewModel: TasksViewModel
 
 @Composable
 fun TaskContent(tasks: TaskUiState, modifier: Modifier = Modifier) {
-    TODO("Not yet implemented")
+    Text("Helo")
 }
