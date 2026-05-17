@@ -11,3 +11,5 @@ fun LocalTask.toExternal() =
 
 @JvmName("localToExternal")
 fun List<LocalTask>.toExternal() = map(LocalTask::toExternal)
+
+fun Task.toLocal() = LocalTask(id = id, title = title, description = description)

@@ -6,5 +6,8 @@ import kotlinx.coroutines.flow.Flow
 Interface to the LocalTask layer
  */
 interface TaskRepository {
-    fun getTasksStream() : Flow<List<Task>>
+    fun getTasksStream(): Flow<List<Task>>
+
+    suspend fun createTask(title: String, description: String): String
+
 }
