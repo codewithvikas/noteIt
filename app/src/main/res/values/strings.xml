@@ -2,4 +2,6 @@
     <string name="app_name">NoteIt</string>
     <string name="new_task">New Task</string>
     <string name="back">Back</string>
+    <string name="no_tasks_image">No tasks image</string>
+    <string name="you_have_no_tasks">You have no tasks!</string>
 </resources>

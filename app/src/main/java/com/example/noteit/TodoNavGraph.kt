@@ -45,7 +45,7 @@ fun TodoNavGraph(
             val title = entry.arguments?.getInt(TITLE_ARG)!!
             AddEditTaskScreen(
                 topBarTitle = title,
-                onBack = {}
+                onBack = { navController.popBackStack() }
             )
         }
     }
